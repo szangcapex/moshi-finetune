@@ -1,19 +1,12 @@
 #!/bin/bash
-# chmod +x
 
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-RUN_DIR="./output_${TIMESTAMP}"
 
-echo "Training will save to: $RUN_DIR"
-
-# 删除旧的符号链接（如果存在）
-if [ -L "./output" ]; then
-    rm ./output
+# 如果 output 目录存在（不是符号链接），重命名它
+if [ -e "./output" ] && [ ! -L "./output" ]; then
+    OLD_NAME="./output_archived_${TIMESTAMP}"
+    echo "Found existing output directory, renaming to: $OLD_NAME"
+    mv ./output "$OLD_NAME"
 fi
-
-# 创建新的符号链接指向本次训练目录
-ln -s "output_${TIMESTAMP}" ./output
-
-echo "Created symlink: ./output -> output_${TIMESTAMP}"
 
 CUDA_VISIBLE_DEVICES=0 uv run torchrun --nproc-per-node 1 -m train example/moshi_7B.yaml
