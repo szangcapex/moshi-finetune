@@ -1,4 +1,5 @@
 #!/bin/bash
+# chmod +x
 
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 RUN_DIR="./output_${TIMESTAMP}"
