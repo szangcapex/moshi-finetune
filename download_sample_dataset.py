@@ -12,4 +12,4 @@ local_dir = snapshot_download(
 )
 print(f"数据集已下载到: {local_dir}")
 print("\n现在修改 example/moshi_7B.yaml 中的 train_data 为:")
-print(f"  train_data: \"{local_dir}/train.jsonl\"")
+print(f"  train_data: \"{local_dir}/dailytalk.jsonl\"")
