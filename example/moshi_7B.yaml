@@ -20,7 +20,7 @@ text_padding_weight: .5
 
 # optim
 duration_sec: 100
-batch_size: 16
+batch_size: 1
 max_steps: 2000
 gradient_checkpointing: true
 optim:
@@ -39,7 +39,7 @@ ckpt_freq: 100
 
 save_adapters: true # Must be False if full_finetuning is True
 
-run_dir: ""  # Fill
+run_dir: "./output"  # Fill
 
 # This part is optional and can be kept commented out
 # wandb:
