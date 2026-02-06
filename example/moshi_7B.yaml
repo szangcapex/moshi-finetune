@@ -1,8 +1,8 @@
 # data
 data:
-  eval_data: './daily-talk-contiguous/train.jsonl' # Optional Fill
+  eval_data: '' # Optional Fill
   shuffle: true
-  train_data: '' # Fill
+  train_data: './daily-talk-contiguous/train.jsonl' # Fill
 
 # model
 moshi_paths: 
