@@ -20,7 +20,7 @@ text_padding_weight: .5
 
 # optim
 duration_sec: 100
-batch_size: 1
+batch_size: 16
 max_steps: 2000
 gradient_checkpointing: true
 optim:
